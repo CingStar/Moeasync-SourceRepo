@@ -5,8 +5,6 @@ on:
     branches: [ main, master ]          # 监听的分支，按需修改
     paths:
       - 'source/*.json'              # 仅当 source 目录下的 JSON 文件变更时触发
-    paths-ignore:
-      - 'Index.json'                    # 避免因 index.json 变更再次触发
 
 permissions:
   contents: write                        # 允许推送代码
