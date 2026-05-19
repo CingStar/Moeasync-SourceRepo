@@ -1,0 +1,41 @@
+name: Auto update source index
+
+on:
+  push:
+    branches: [ main, master ]          # 监听的分支，按需修改
+    paths:
+      - 'source/*.json'              # 仅当 source 目录下的 JSON 文件变更时触发
+    paths-ignore:
+      - 'Index.json'                    # 避免因 index.json 变更再次触发
+
+permissions:
+  contents: write                        # 允许推送代码
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                 # 获取完整历史，避免后续 git push 失败
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'             # 可根据需要修改版本
+
+      - name: Build source index
+        run: node scripts/buildSourceIndex.js
+
+      - name: Commit and push if index.json changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          if git diff --staged --quiet; then
+            echo "No changes to index.json"
+          else
+            git commit -m "chore: auto-update source index [skip ci]"
+            git push
+          fi
