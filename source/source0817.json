@@ -3,7 +3,7 @@
     "animeSources": [
       {
         "featureID": "web-selector",
-        "version": "1.0",
+        "version": "1.1",
         "config": {
           "name": "稀饭动漫",
           "baseUrl": "https://dm.xifanacg.com/",
@@ -36,7 +36,7 @@
       },
       {
         "featureID": "web-selector",
-        "version": "1.0",
+        "version": "1.1",
         "config": {
           "name": "girigiri愛動漫",
           "baseUrl": "https://bgm.girigirilove.com/",
