@@ -34,7 +34,7 @@ jobs:
           echo "Changed files: $CHANGED"
 
       - name: Run index update script
-        run: node scripts/updateSourceIndex.js --changed-files ${{ steps.changed.outputs.files }}
+        run: node scripts/buildSourceIndex.js --changed-files ${{ steps.changed.outputs.files }}
         # 如果没有任何变更文件（理论上不会发生，但安全处理），脚本会 fallback 到全量重建
 
       - name: Commit and push if index.json changed
