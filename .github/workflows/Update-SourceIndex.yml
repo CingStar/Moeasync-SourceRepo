@@ -2,12 +2,12 @@ name: Auto update source index
 
 on:
   push:
-    branches: [ main, master ]          # 监听的分支，按需修改
+    branches: [ main, master ]
     paths:
-      - 'source/*.json'              # 仅当 source 目录下的 JSON 文件变更时触发
+      - 'source/*.json'          # 仅当源文件变更时触发
 
 permissions:
-  contents: write                        # 允许推送代码
+  contents: write
 
 jobs:
   update-index:
@@ -16,15 +16,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0                 # 获取完整历史，避免后续 git push 失败
+          fetch-depth: 0             # 获取完整历史以便获取 commit 时间
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'             # 可根据需要修改版本
+          node-version: '20'
 
-      - name: Build source index
-        run: node scripts/buildSourceIndex.js
+      - name: Get changed source files
+        id: changed
+        run: |
+          # 获取本次推送中变更的源文件（新增、修改、删除、重命名）
+          git diff --name-only --diff-filter=ACMR ${{ github.event.before }} ${{ github.event.after }} -- 'source/*.json' > changed.txt
+          # 将文件列表转为空格分隔的一行，存入环境变量
+          CHANGED=$(cat changed.txt | tr '\n' ' ')
+          echo "files=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed files: $CHANGED"
+
+      - name: Run index update script
+        run: node scripts/updateSourceIndex.js --changed-files ${{ steps.changed.outputs.files }}
+        # 如果没有任何变更文件（理论上不会发生，但安全处理），脚本会 fallback 到全量重建
 
       - name: Commit and push if index.json changed
         run: |
