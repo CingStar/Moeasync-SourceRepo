@@ -4,67 +4,80 @@ const fs = require('fs');
 const path = require('path');
 
 // ========== 配置 ==========
-const SOURCE_DIR = 'source';          // 存放各个源 JSON 文件的目录
+const SOURCE_DIR = 'source';          // 存放源文件的目录
 const OUTPUT_FILE = 'Index.json';     // 输出的索引文件
 // =========================
 
 /**
- * 检查源是否需要验证
- * @param {object} config 源配置对象（从 JSON 解析）
+ * 判断源是否需要验证
+ * @param {object} source 单个源对象（来自 animeSources 数组中的一项）
  * @returns {boolean}
  */
-function needVerify(config) {
-  const verify = config?.expansionConfig?.verifyConfig;
+function needVerify(source) {
+  const verify = source?.config?.expansionConfig?.verifyConfig;
   if (!verify) return false;
   const selector = verify.selectorVerify;
   return selector && typeof selector === 'string' && selector.trim().length > 0;
 }
 
 /**
- * 提取单个源的索引信息
- * @param {string} filePath 源文件的绝对路径
+ * 从单个源文件中提取所有源的索引项
+ * @param {string} filePath 文件绝对路径
  * @param {string} relativePath 相对于项目根目录的路径（含 .json）
- * @returns {object|null}
+ * @returns {Array} 索引项数组
  */
-function extractSourceInfo(filePath, relativePath) {
+function extractSourcesFromFile(filePath, relativePath) {
   let content;
   try {
     content = fs.readFileSync(filePath, 'utf8');
   } catch (err) {
     console.error(`❌ 读取文件失败: ${filePath}`, err.message);
-    return null;
+    return [];
   }
 
-  let config;
+  let data;
   try {
-    config = JSON.parse(content);
+    data = JSON.parse(content);
   } catch (err) {
     console.error(`❌ JSON 解析失败: ${filePath}`, err.message);
-    return null;
+    return [];
   }
 
-  // 必须字段检查
-  const name = config?.config?.name;
-  const version = config?.version;
-  if (!name || !version) {
-    console.warn(`⚠️ 跳过 ${filePath}：缺少 name 或 version 字段`);
-    return null;
+  const animeSources = data?.sourceList?.animeSources;
+  if (!Array.isArray(animeSources)) {
+    console.warn(`⚠️ 跳过 ${relativePath}：缺少 sourceList.animeSources 数组`);
+    return [];
   }
 
   const stat = fs.statSync(filePath);
-  const pathWithoutExt = relativePath.replace(/\.json$/, '');
+  const fileMtime = stat.mtimeMs;
+  // path 字段：去掉 .json 扩展名的相对路径，例如 "source/稀饭动漫"
+  const basePath = relativePath.replace(/\.json$/, '');
 
-  return {
-    name: name,
-    version: version,
-    lastUpdate: stat.mtimeMs,        // 文件修改时间戳（毫秒）
-    needVerify: needVerify(config),
-    path: pathWithoutExt             // 例如 "source/source1"
-  };
+  const items = [];
+  for (let i = 0; i < animeSources.length; i++) {
+    const src = animeSources[i];
+    const name = src?.config?.name;
+    const version = src?.version;
+    if (!name || !version) {
+      console.warn(`⚠️ 跳过 ${relativePath} 中的第 ${i+1} 个源：缺少 name 或 version`);
+      continue;
+    }
+
+    items.push({
+      name: name,
+      version: version,
+      lastUpdate: fileMtime,          // 该源文件的修改时间戳
+      needVerify: needVerify(src),
+      path: basePath                   // 指向源文件本身
+    });
+  }
+
+  return items;
 }
 
 /**
- * 扫描 source 目录，构建索引数组（直接返回数组）
+ * 扫描 source 目录，构建索引数组
  */
 function buildIndexArray() {
   const sourceDir = path.resolve(process.cwd(), SOURCE_DIR);
@@ -74,22 +87,20 @@ function buildIndexArray() {
   }
 
   const files = fs.readdirSync(sourceDir);
-  const sources = [];
+  const allItems = [];
 
   for (const file of files) {
     if (!file.endsWith('.json')) continue;
     const absolutePath = path.join(sourceDir, file);
     const relativePath = path.relative(process.cwd(), absolutePath).replace(/\\/g, '/');
-    const info = extractSourceInfo(absolutePath, relativePath);
-    if (info) {
-      sources.push(info);
-    }
+    const items = extractSourcesFromFile(absolutePath, relativePath);
+    allItems.push(...items);
   }
 
-  // 按 name 排序（可选）
-  sources.sort((a, b) => a.name.localeCompare(b.name));
+  // 可选：按 name 排序
+  allItems.sort((a, b) => a.name.localeCompare(b.name));
 
-  return sources;   // 直接返回数组
+  return allItems;
 }
 
 function main() {
