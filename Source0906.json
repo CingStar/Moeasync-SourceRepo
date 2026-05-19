@@ -1,0 +1,66 @@
+{
+  "sourceList": {
+    "animeSources": [
+      {
+        "featureID": "web-selector",
+        "version": "1.0",
+        "config": {
+          "name": "aki动漫",
+          "baseUrl": "http://www.akianime.cc/",
+          "iconUrl": "http://www.akianime.cc/template/dsn2/static/img/icon.png",
+          "searchConfig": {
+            "searchUrl": "http://www.akianime.cc/bgmsearch/{keyword}-------------.html",
+            "selectorName": "body > div.box-width > div > div > div > div.detail-info.rel.flex-auto.lightSpeedIn > a > h3",
+            "selectorLink": "body > div.box-width > div > div > div > div.detail-info.rel.flex-auto.lightSpeedIn > a"
+          },
+          "episodeConfig": {
+            "isMultiLine": true,
+            "selectorLineName": "body > div:nth-child(7) > div.anthology.wow.fadeInUp.animated.animated > div.anthology-tab.nav-swiper > div > a",
+            "selectorLineLink": "body > div:nth-child(7) > div.anthology.wow.fadeInUp.animated.animated > div.anthology-list > div > div > ul",
+            "selectorEpisodeName": "li > a",
+            "selectorEpisodeLink": "li > a",
+            "matchVideoUrl": ""
+          },
+          "expansionConfig": {
+            "parserConfig": {
+              "type": "HTML-Parser",
+              "selectorTag": "body > div.box-width.player.player-style-1 > div.player-left > script:nth-child(3)",
+              "matchVideoUrl": "",
+              "parserMode": "direct"
+            }
+          }
+        }
+      },
+      {
+        "featureID": "web-selector",
+        "version": "beta",
+        "config": {
+          "name": "囧次元",
+          "baseUrl": "https://www.jcydmz.com/",
+          "iconUrl": "https://www.jcydmz.com/upload/mxprocms/20241012-1/5ba127dcfd607d60e83d5f984f821ef0.png",
+          "searchConfig": {
+            "searchUrl": "https://www.jcydmz.com/index.php/vod/search/wd/{keyword}.html",
+            "selectorName": "body > div.page.list > div.main > div > div > div.module-main.module-page > div > div > div.module-card-item-info > div.module-card-item-title > a > strong",
+            "selectorLink": "body > div.page.list > div.main > div > div > div.module-main.module-page > div > div > div.module-card-item-info > div.module-card-item-title > a"
+          },
+          "episodeConfig": {
+            "isMultiLine": true,
+            "selectorLineName": "#y-playList > div.module-tab-item.tab-item > span",
+            "selectorLineLink": "body > div > div.main > div > div:nth-child(4)",
+            "selectorEpisodeName": "div > div > a > span",
+            "selectorEpisodeLink": "div > div > a",
+            "matchVideoUrl": ""
+          },
+          "expansionConfig": {
+            "parserConfig": {
+              "type": "HTML-Parser",
+              "selectorTag": "body > div > div.main > div > div.module.module-player > div > div.player-box > div > script:nth-child(2)",
+              "matchVideoUrl": "",
+              "parserMode": "direct"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

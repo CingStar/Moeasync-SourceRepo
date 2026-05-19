@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "sourceList": {
+            "type": "object",
+            "properties": {
+                "animeSources": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "featureID": {
+                                "type": "string"
+                            },
+                            "version": {
+                                "type": "string"
+                            },
+                            "config": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "baseUrl": {
+                                        "type": "string"
+                                    },
+                                    "iconUrl": {
+                                        "type": "string"
+                                    },
+                                    "searchConfig": {
+                                        "type": "object",
+                                        "properties": {
+                                            "searchUrl": {
+                                                "type": "string"
+                                            },
+                                            "selectorName": {
+                                                "type": "string"
+                                            },
+                                            "selectorLink": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "searchUrl",
+                                            "selectorName",
+                                            "selectorLink"
+                                        ]
+                                    },
+                                    "episodeConfig": {
+                                        "type": "object",
+                                        "properties": {
+                                            "isMultiLine": {
+                                                "type": "boolean"
+                                            },
+                                            "selectorLineName": {
+                                                "type": "string"
+                                            },
+                                            "selectorLineLink": {
+                                                "type": "string"
+                                            },
+                                            "selectorEpisodeName": {
+                                                "type": "string"
+                                            },
+                                            "selectorEpisodeLink": {
+                                                "type": "string"
+                                            },
+                                            "matchVideoUrl": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "isMultiLine",
+                                            "selectorLineName",
+                                            "selectorLineLink",
+                                            "selectorEpisodeName",
+                                            "selectorEpisodeLink",
+                                            "matchVideoUrl"
+                                        ]
+                                    },
+                                    "expansionConfig": {
+                                        "type": "object",
+                                        "properties": {
+                                            "parserConfig": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string"
+                                                    },
+                                                    "selectorTag": {
+                                                        "type": "string"
+                                                    },
+                                                    "matchVideoUrl": {
+                                                        "type": "string"
+                                                    },
+                                                    "parserMode": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "type",
+                                                    "selectorTag",
+                                                    "matchVideoUrl",
+                                                    "parserMode"
+                                                ]
+                                            },
+                                            "verifyConfig": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "selectorVerify": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "selectorVerify"
+                                                ]
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "parserConfig"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "name",
+                                    "baseUrl",
+                                    "iconUrl",
+                                    "searchConfig",
+                                    "episodeConfig",
+                                    "expansionConfig"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "featureID",
+                            "version",
+                            "config"
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "animeSources"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "sourceList"
+    ]
+}
