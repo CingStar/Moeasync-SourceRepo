@@ -1,0 +1,8 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["/source0817.json"],
+            "url": "./schema.json" 
+        }
+    ]
+}
