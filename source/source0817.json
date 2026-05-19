@@ -69,7 +69,7 @@
       },
       {
         "featureID": "web-selector",
-        "version": "1.0",
+        "version": "1.1",
         "config": {
           "name": "稀饭动漫（备用）",
           "baseUrl": "https://dm1.xfdm.pro/",
