@@ -43,8 +43,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Index.json
           if git diff --staged --quiet; then
-            echo "No changes to index.json"
+            echo "No changes to Index.json"
           else
-            git commit -m "chore: auto-update source index [skip ci]"
+            git commit -m "chore: auto-update source Index [skip ci]"
             git push
           fi
