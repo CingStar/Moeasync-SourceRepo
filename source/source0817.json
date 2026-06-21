@@ -3,7 +3,7 @@
     "animeSources": [
       {
         "featureID": "web-selector",
-        "version": "1.1",
+        "version": "1.2",
         "config": {
           "name": "稀饭动漫",
           "baseUrl": "https://dm.xifanacg.com/",
@@ -29,14 +29,18 @@
               "parserMode": "direct"
             },
             "verifyConfig": {
-            "selectorVerify": "body > div.msg-jump.cor4.pop-box"
+              "selectorVerify": "body > div.msg-jump.cor4.pop-box"
+            },
+            "sourceConfig": {
+              "selectorCover": "body > div.box-width > div > div.search-list > div > div > div.detail-pic > img",
+              "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel.wow > div.switch-box.top20 > div > div"
             }
           }
         }
       },
       {
         "featureID": "web-selector",
-        "version": "1.1",
+        "version": "1.2",
         "config": {
           "name": "girigiri愛動漫",
           "baseUrl": "https://bgm.girigirilove.com/",
@@ -63,6 +67,10 @@
             },
             "verifyConfig":{
               "selectorVerify": "body > div.msg-jump.cor4.pop-box"
+            },
+            "sourceConfig": {
+              "selectorCover": "body > div.box-width > div > div > div > div.fadeInLeft > div > img",
+              "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel > div.switch-box.top20 > div.check.selected > div"
             }
           }
         }
@@ -102,7 +110,7 @@
       },
       {
         "featureID": "web-selector",
-        "version": "1.0",
+        "version": "1.2",
         "config": {
           "name": "饭团动漫",
           "baseUrl": "https://acgfta.com/",
@@ -126,6 +134,10 @@
               "selectorTag": "body > main > div > div.row.mt-3 > div > div > script:nth-child(1)",
               "matchVideoUrl": "",
               "parserMode": "direct"
+            },
+            "sourceConfig": {
+              "selectorCover": "body > main > div > div.mt-2-5 > div > div > div > div > div > img",
+              "selectorSummary": "body > main > div > div:nth-child(4) > div.col-xl-10.col-md-9 > div.row > div.col-lg-9 > div"
             }
           }
         }

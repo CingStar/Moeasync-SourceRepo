@@ -118,6 +118,22 @@
                                                 "required": [
                                                     "selectorVerify"
                                                 ]
+                                            },
+                                            "sourceConfig": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "selectorCover": {
+                                                        "type": "string"
+                                                    },
+                                                    "selectorSummary": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "selectorCover",
+                                                    "selectorSummary"
+                                                ]
                                             }
                                         },
                                         "additionalProperties": false,
