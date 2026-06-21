@@ -107,19 +107,7 @@
                                                     "parserMode"
                                                 ]
                                             },
-                                            "verifyConfig": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "selectorVerify": {
-                                                        "type": "string"
-                                                    }
-                                                },
-                                                "additionalProperties": false,
-                                                "required": [
-                                                    "selectorVerify"
-                                                ]
-                                            },
-                                            "sourceConfig": {
+                                            "subjectConfig": {
                                                 "type": "object",
                                                 "properties": {
                                                     "selectorCover": {
@@ -138,7 +126,7 @@
                                         "additionalProperties": false,
                                         "required": [
                                             "parserConfig",
-                                            "sourceConfig"
+                                            "subjectConfig"
                                         ]
                                     }
                                 },
