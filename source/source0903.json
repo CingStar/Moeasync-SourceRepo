@@ -31,67 +31,7 @@
                     }
                     
                 }
-            },
-            {
-                "featureID": "web-selector",
-                "version": "1.0",
-                "config": {
-                    "name": "NT动漫",
-                    "baseUrl": "https://www.ntdm8.com/",
-                    "iconUrl": "https://cdn.yinghuazy.xyz/webjs/ntdm8/image/favicon.ico",
-                    "searchConfig": {
-                        "searchUrl": "https://www.ntdm8.com/search/-------------.html?wd={keyword}",
-                        "selectorName": "#container > div:nth-child(2) > div > div > div > div:nth-child(1) > a",
-                        "selectorLink": "#container > div:nth-child(2) > div > div > div > div:nth-child(1) > a"
-                    },
-                    "episodeConfig": {
-                        "isMultiLine": true,
-                        "selectorLineName": "#menu0 > li",
-                        "selectorLineLink": "#main0 > div > ul",
-                        "selectorEpisodeName": "li > a",
-                        "selectorEpisodeLink": "li > a",
-                        "matchVideoUrl": ""
-                    },
-                    "expansionConfig": {
-                        "parserConfig": {
-                            "type": "HTML-Parser",
-                            "selectorTag": "#ageframediv > script:nth-child(1)",
-                            "matchVideoUrl": "",
-                            "parserMode": "yinghua"
-                        }
-                    }
-                }
-            },
-            {
-                "featureID": "web-selector",
-                "version": "1.0",
-                "config": {
-                    "name": "风车动漫",
-                    "baseUrl": "https://vdm10.com/",
-                    "iconUrl": "https://vdm10.com/template/a_0001/images/favicon.png",
-                    "searchConfig": {
-                        "searchUrl": "https://vdm10.com/search/-------------.html?wd={keyword}",
-                        "selectorName": "body > div.sear_box > div.sear_con > div > div > div > div.result_title > a",
-                        "selectorLink": "body > div.sear_box > div.sear_con > div > div > div > div.result_title > a"
-                    },
-                    "episodeConfig": {
-                        "isMultiLine": true,
-                        "selectorLineName": "#play > div.con_juji_bg > div.playlist-tab > ul > li > a",
-                        "selectorLineLink": "#play > div.con_juji_bg > div.tab-content > ul ",
-                        "selectorEpisodeName": "li > a",
-                        "selectorEpisodeLink": "li > a",
-                        "matchVideoUrl": ""
-                    },
-                    "expansionConfig": {
-                        "parserConfig": {
-                            "type": "HTML-Parser",
-                            "selectorTag": "body > div.bofbg > div > div > div.left.l > script:nth-child(1)",
-                            "matchVideoUrl": "",
-                            "parserMode": "yinghua"
-                        }
-                    }
-                }
-            }                        
+            }                       
         ]
     }
 }
