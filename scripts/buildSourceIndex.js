@@ -64,6 +64,7 @@ function extractItemsFromFile(filePath) {
     const src = animeSources[i];
     const name = src?.config?.name;
     const version = src?.version;
+    const coverUrl = src?.config?.iconUrl;
     if (!name || !version) {
       console.warn(`⚠️ 跳过 ${filePath} 中的第 ${i+1} 个源：缺少 name 或 version`);
       continue;
@@ -73,7 +74,8 @@ function extractItemsFromFile(filePath) {
       version: version,
       lastUpdate: lastUpdate,        // 文件修改时间戳（毫秒）
       needVerify: needVerify(src),
-      path: basePath
+      path: basePath,
+      cover: coverUrl
     });
   }
   return items;
