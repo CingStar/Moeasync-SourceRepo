@@ -15,13 +15,6 @@
     "cover": "https://anime.girigirilove.com/upload/site/20231121-1/fdd2694db66628a9deadd86e50aedd43.png"
   },
   {
-    "name": "NT动漫",
-    "version": "1.0",
-    "lastUpdate": 1779190251872.8853,
-    "needVerify": false,
-    "path": "source/source0903"
-  },
-  {
     "name": "囧次元",
     "version": "beta",
     "lastUpdate": 1779190251872.2632,
@@ -31,9 +24,10 @@
   {
     "name": "异世界动漫",
     "version": "1.0",
-    "lastUpdate": 1779190251872.8853,
+    "lastUpdate": 1782053097114.7559,
     "needVerify": false,
-    "path": "source/source0903"
+    "path": "source/source0903",
+    "cover": "https://dmmiku.com/template/conch/asset/img/favicon.png"
   },
   {
     "name": "稀饭动漫",
@@ -50,13 +44,6 @@
     "needVerify": true,
     "path": "source/source0817",
     "cover": "https://dm1.xfdm.pro/upload/site/20240308-1/813e41f81d6f85bfd7a44bf8a813f9e5.png"
-  },
-  {
-    "name": "风车动漫",
-    "version": "1.0",
-    "lastUpdate": 1779190251872.8853,
-    "needVerify": false,
-    "path": "source/source0903"
   },
   {
     "name": "饭团动漫",
