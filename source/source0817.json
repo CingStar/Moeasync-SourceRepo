@@ -3,7 +3,7 @@
     "animeSources": [
       {
         "featureID": "web-selector",
-        "version": "1.3",
+        "version": "1.3.1",
         "config": {
           "name": "稀饭动漫",
           "baseUrl": "https://dm.xifanacg.com/",
