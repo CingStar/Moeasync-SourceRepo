@@ -65,10 +65,8 @@
               "matchVideoUrl": "",
               "parserMode": "base"
             },
-            "verifyConfig":{
-              "selectorVerify": "body > div.msg-jump.cor4.pop-box"
-            },
             "sourceConfig": {
+              "selectorVerify": "body > div.msg-jump.cor4.pop-box",
               "selectorCover": "body > div.box-width > div > div > div > div.fadeInLeft > div > img",
               "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel > div.switch-box.top20 > div.check.selected > div"
             }
@@ -102,7 +100,7 @@
               "matchVideoUrl": "",
               "parserMode": "direct"
             },
-            "verifyConfig": {
+            "sourceConfig": {
               "selectorVerify": "body > div.msg-jump.cor4.pop-box"
             }
           }

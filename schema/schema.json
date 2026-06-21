@@ -127,18 +127,18 @@
                                                     },
                                                     "selectorSummary": {
                                                         "type": "string"
+                                                    },
+                                                    "selectorVerify": {
+                                                        "type": "string"
                                                     }
                                                 },
-                                                "additionalProperties": false,
-                                                "required": [
-                                                    "selectorCover",
-                                                    "selectorSummary"
-                                                ]
+                                                "additionalProperties": false
                                             }
                                         },
                                         "additionalProperties": false,
                                         "required": [
-                                            "parserConfig"
+                                            "parserConfig",
+                                            "sourceConfig"
                                         ]
                                     }
                                 },
