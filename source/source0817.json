@@ -133,7 +133,7 @@
             },
             "subjectConfig": {
               "selectorCover": "body > main > div > div.mt-2-5 > div > div > div > div > div > img",
-              "selectorSummary": "body > main > div > div:nth-child(4) > div.col-xl-10.col-md-9 > div.row > div.col-lg-9 > div",
+              "selectorSummary": "body > main > div > div:nth-child(4) > div.col-xl-10.col-md-9 > div.row > div.col-lg-9 > div"
             }
           }
         }
