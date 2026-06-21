@@ -14,9 +14,9 @@ const OUTPUT_FILE = 'Index.json';     // 输出索引文件
  * @returns {boolean}
  */
 function needVerify(source) {
-  const verify = source?.config?.expansionConfig?.verifyConfig;
+  const verify = source?.config?.expansionConfig?.subjectConfig?.selectorVerify;
   if (!verify) return false;
-  const selector = verify.selectorVerify;
+  const selector = verify;
   return selector && typeof selector === 'string' && selector.trim().length > 0;
 }
 
