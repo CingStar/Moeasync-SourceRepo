@@ -2,21 +2,23 @@
   {
     "name": "aki动漫",
     "version": "1.0",
-    "lastUpdate": 1779190251872.2632,
+    "lastUpdate": 1782065731676.5571,
     "needVerify": false,
-    "path": "source/Source0906"
+    "path": "source/Source0906",
+    "cover": "http://www.akianime.cc/template/dsn2/static/img/icon.png"
   },
   {
     "name": "囧次元",
     "version": "beta",
-    "lastUpdate": 1779190251872.2632,
+    "lastUpdate": 1782065731676.5571,
     "needVerify": false,
-    "path": "source/Source0906"
+    "path": "source/Source0906",
+    "cover": "https://www.jcydmz.com/upload/mxprocms/20241012-1/5ba127dcfd607d60e83d5f984f821ef0.png"
   },
   {
     "name": "异世界动漫",
     "version": "1.0",
-    "lastUpdate": 1782053097114.7559,
+    "lastUpdate": 1782065731677.175,
     "needVerify": false,
     "path": "source/source0903",
     "cover": "https://dmmiku.com/template/conch/asset/img/favicon.png"
