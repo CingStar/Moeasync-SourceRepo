@@ -6,7 +6,7 @@
         "version": "1.3.1",
         "config": {
           "name": "稀饭动漫",
-          "baseUrl": "https://dm.xifanacg.com/",
+          "baseUrl": "https://anime.xifanacg.com/",
           "iconUrl": "https://dm.xifanacg.com/template/dsn2/static/img/fav.png",
           "searchConfig": {
             "searchUrl": "https://dm.xifanacg.com/search.html?wd={keyword}",
