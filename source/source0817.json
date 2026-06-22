@@ -31,7 +31,8 @@
             "subjectConfig": {
               "selectorCover": "body > div.box-width > div > div.search-list > div > div > div.detail-pic > img",
               "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel.wow > div.switch-box.top20 > div > div",
-              "selectorVerify": "body > div.msg-jump.cor4.pop-box"
+              "selectorVerify": "body > div.msg-jump.cor4.pop-box",
+              "coverClassTag": "data-src"
             }
           }
         }
@@ -66,7 +67,8 @@
             "subjectConfig": {
               "selectorVerify": "body > div.msg-jump.cor4.pop-box",
               "selectorCover": "body > div.box-width > div > div > div > div.fadeInLeft > div > img",
-              "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel > div.switch-box.top20 > div.check.selected > div"
+              "selectorSummary": "body > div.vod-detail.style-detail > div.box-width.rel > div.switch-box.top20 > div.check.selected > div",
+              "coverClassTag": "data-src"
             }
           }
         }
@@ -133,7 +135,8 @@
             },
             "subjectConfig": {
               "selectorCover": "body > main > div > div.mt-2-5 > div > div > div > div > div > img",
-              "selectorSummary": "body > main > div > div:nth-child(4) > div.col-xl-10.col-md-9 > div.row > div.col-lg-9 > div"
+              "selectorSummary": "body > main > div > div:nth-child(4) > div.col-xl-10.col-md-9 > div.row > div.col-lg-9 > div",
+              "coverClassTag": "data-src"
             }
           }
         }
