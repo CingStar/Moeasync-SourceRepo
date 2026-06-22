@@ -42,7 +42,7 @@
         "version": "1.3.1",
         "config": {
           "name": "girigiri愛動漫",
-          "baseUrl": "https://bgm.girigirilove.com/",
+          "baseUrl": "https://anime.girigirilove.com/",
           "iconUrl": "https://anime.girigirilove.com/upload/site/20231121-1/fdd2694db66628a9deadd86e50aedd43.png",
           "searchConfig": {
             "searchUrl": "https://bgm.girigirilove.com/search/-------------/?wd={keyword}",
