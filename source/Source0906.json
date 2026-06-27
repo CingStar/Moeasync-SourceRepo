@@ -7,7 +7,7 @@
         "config": {
           "name": "囧次元",
           "baseUrl": "https://www.jcydmz.com/",
-          "iconUrl": "https://www.jcydmz.com/upload/mxprocms/20241012-1/5ba127dcfd607d60e83d5f984f821ef0.png",
+          "iconUrl": "https://www.jcydmz.com/favicon.ico",
           "searchConfig": {
             "searchUrl": "https://www.jcydmz.com/index.php/vod/search.html?wd={keyword}",
             "selectorName": "body > div:nth-child(4) > div > div > ul.row > li > div.name > h3 > a",
@@ -15,7 +15,7 @@
           },
           "episodeConfig": {
             "isMultiLine": true,
-            "selectorLineName": "body > div:nth-child(4) > div.vod-bottom > div.vod-left > div.playlist-box > div > div.swiper-horizontal > ul > li",
+            "selectorLineName": "body > div:nth-child(4) > div.vod-bottom.pt-10.row > div.vod-left.col-xs-12.col-xl-9 > div.playlist-box.layout-box.gap > div.playlist-tab-box > div.playlist-tab.ewave-swiper > ul > li",
             "selectorLineLink": "body > div:nth-child(4) > div.vod-bottom > div.vod-left > div.playlist-box > div.episode-box.scrollbar > ul",
             "selectorEpisodeName": "li > a",
             "selectorEpisodeLink": "li > a",
