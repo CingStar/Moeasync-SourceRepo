@@ -28,7 +28,7 @@
               "matchVideoUrl": "",
               "parserMode": "direct"
             },
-            "sourceConfig": {
+            "subjectConfig": {
               "selectorCover": "body > div:nth-child(4) > div > div > ul.row > li > div.pic > a > div",
               "selectorSummary": "body > div:nth-child(4) > div.vod-info.gap.clearfix > div.info > div.text.text-row.text-row-2",
               "coverClassTag": "data-original"
