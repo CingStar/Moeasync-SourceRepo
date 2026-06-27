@@ -3,9 +3,9 @@
         "animeSources": [
             {
                 "featureID": "web-selector",
-                "version": "1.0",
+                "version": "1.3",
                 "config": {
-                    "name": "异世界动漫",
+                    "name": "动漫MIKU",
                     "baseUrl": "https://dmmiku.com/",
                     "iconUrl": "https://dmmiku.com/template/conch/asset/img/favicon.png",
                     "searchConfig": {
@@ -27,6 +27,11 @@
                             "selectorTag": "body > div.container > div.left_row.fl > div.pannel.play_box.clearfix > div.play_box_warp > div.play_box_warp2 > script:nth-child(6)",
                             "matchVideoUrl": "",
                             "parserMode": "tuzimi"
+                        },
+                        "subjectConfig": {
+                            "selectorCover": "body > div.container > div.left_row.fl > div.pannel.search_box.clearfix > ul > li > div.searchlist_img > a",
+                            "selectorSummary": "body > div.container > div.left_row.fl > div:nth-child(5) > div > div > section:nth-child(1) > div.content_desc.full_text.clearfix > span > p",
+                            "coverClassTag": "data-original"
                         }
                     }
                     
