@@ -1,163 +1,210 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "sourceList": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Object with 1 properties",
+  "properties": {
+    "sourceList": {
+      "type": "object",
+      "properties": {
+        "animeSources": {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-                "animeSources": {
-                    "type": "array",
-                    "items": {
+              "featureID": {
+                "type": "string",
+                "description": "数据源特征ID，为保证数据源的可扩展性，目前写web-selector即可",
+                "default": "web-selector"
+              },
+              "version": {
+                "type": "string",
+                "description": "番剧源版本，当前为1.0",
+                "default": "1.0"
+              },
+              "config": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "番剧源名称",
+                    "default": "稀饭动漫"
+                  },
+                  "baseUrl": {
+                    "type": "string",
+                    "description": "番剧源主页Url",
+                    "default": "https://anime.xifanacg.com/"
+                  },
+                  "iconUrl": {
+                    "type": "string",
+                    "description": "番剧源图标Url",
+                    "default": "https://dm.xifanacg.com/template/dsn2/static/img/fav.png"
+                  },
+                  "searchConfig": {
+                    "type": "object",
+                    "properties": {
+                      "searchUrl": {
+                        "type": "string",
+                        "description": "番剧源搜索Url，例如NT动漫的搜索Url是https://dm.xifanacg.com/search.html?wd=，那么应该填https://dm.xifanacg.com/search.html?wd={keyword}，注意{keyword}必须要有，对应的位置是关键词所在的位置",
+                        "default": "https://dm.xifanacg.com/search.html?wd={keyword}"
+                      },
+                      "selectorName": {
+                        "type": "string",
+                        "description": "条目名称所在标签的css语句",
+                        "default": "body > div.box-width > div > div.search-list > div > div.detail-info > a > h3"
+                      },
+                      "selectorLink": {
+                        "type": "string",
+                        "description": "条目链接所在标签的css语句",
+                        "default": "body > div.box-width > div > div.search-list > div > div.detail-info > a"
+                      }
+                    },
+                    "required": [
+                      "searchUrl",
+                      "selectorName",
+                      "selectorLink"
+                    ]
+                  },
+                  "episodeConfig": {
+                    "type": "object",
+                    "properties": {
+                      "isMultiLine": {
+                        "type": "boolean",
+                        "description": "Boolean value",
+                        "default": true
+                      },
+                      "selectorLineName": {
+                        "type": "string",
+                        "description": "条目所有线路名称所在标签的css语句",
+                        "default": "body > div.box-width.cor5 > div.anthology > div.anthology-tab > div > a.swiper-slide"
+                      },
+                      "selectorLineLink": {
+                        "type": "string",
+                        "description": "条目当前线路的剧情面板所在标签的css语句",
+                        "default": "body > div.box-width.cor5 > div.anthology > div.anthology-list > div"
+                      },
+                      "selectorEpisodeName": {
+                        "type": "string",
+                        "description": "剧集名称所在标签的css语句，从当前线路的剧情面板开始匹配，即如果剧集名称所在标签的位置是body > div > div > ul> a, 而剧集面板标签的位置是body > div > div，则只要填ul > a",
+                        "default": "div > ul > li > a"
+                      },
+                      "selectorEpisodeLink": {
+                        "type": "string",
+                        "description": "剧集链接所在标签的css语句，从当前线路的剧情面板开始匹配，规则同剧集名称",
+                        "default": "div > ul > li > a"
+                      },
+                      "matchVideoUrl": {
+                        "type": "string",
+                        "description": "用于webview匹配视频链接的正则规则，如果填写了parserConfig，则此处可为空，目前请优先使用HTML-Parser，注意episodeConfig中的isMultiLine默认为true，即匹配多线路",
+                        "default": "(?!.*&url)^https?://.*.mp4$"
+                      }
+                    },
+                    "required": [
+                      "isMultiLine",
+                      "selectorLineName",
+                      "selectorLineLink",
+                      "selectorEpisodeName",
+                      "selectorEpisodeLink",
+                      "matchVideoUrl"
+                    ]
+                  },
+                  "expansionConfig": {
+                    "type": "object",
+                    "description": "数据源扩展选项",
+                    "properties": {
+                      "parserConfig": {
                         "type": "object",
                         "properties": {
-                            "featureID": {
-                                "type": "string"
-                            },
-                            "version": {
-                                "type": "string"
-                            },
-                            "config": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "baseUrl": {
-                                        "type": "string"
-                                    },
-                                    "iconUrl": {
-                                        "type": "string"
-                                    },
-                                    "searchConfig": {
-                                        "type": "object",
-                                        "properties": {
-                                            "searchUrl": {
-                                                "type": "string"
-                                            },
-                                            "selectorName": {
-                                                "type": "string"
-                                            },
-                                            "selectorLink": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "additionalProperties": false,
-                                        "required": [
-                                            "searchUrl",
-                                            "selectorName",
-                                            "selectorLink"
-                                        ]
-                                    },
-                                    "episodeConfig": {
-                                        "type": "object",
-                                        "properties": {
-                                            "isMultiLine": {
-                                                "type": "boolean"
-                                            },
-                                            "selectorLineName": {
-                                                "type": "string"
-                                            },
-                                            "selectorLineLink": {
-                                                "type": "string"
-                                            },
-                                            "selectorEpisodeName": {
-                                                "type": "string"
-                                            },
-                                            "selectorEpisodeLink": {
-                                                "type": "string"
-                                            },
-                                            "matchVideoUrl": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "additionalProperties": false,
-                                        "required": [
-                                            "isMultiLine",
-                                            "selectorLineName",
-                                            "selectorLineLink",
-                                            "selectorEpisodeName",
-                                            "selectorEpisodeLink",
-                                            "matchVideoUrl"
-                                        ]
-                                    },
-                                    "expansionConfig": {
-                                        "type": "object",
-                                        "properties": {
-                                            "parserConfig": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "type": {
-                                                        "type": "string"
-                                                    },
-                                                    "selectorTag": {
-                                                        "type": "string"
-                                                    },
-                                                    "matchVideoUrl": {
-                                                        "type": "string"
-                                                    },
-                                                    "parserMode": {
-                                                        "type": "string"
-                                                    }
-                                                },
-                                                "additionalProperties": false,
-                                                "required": [
-                                                    "type",
-                                                    "selectorTag",
-                                                    "matchVideoUrl",
-                                                    "parserMode"
-                                                ]
-                                            },
-                                            "subjectConfig": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "selectorCover": {
-                                                        "type": "string"
-                                                    },
-                                                    "selectorSummary": {
-                                                        "type": "string"
-                                                    },
-                                                    "selectorVerify": {
-                                                        "type": "string"
-                                                    }
-                                                },
-                                                "additionalProperties": false
-                                            }
-                                        },
-                                        "additionalProperties": false,
-                                        "required": [
-                                            "parserConfig",
-                                            "subjectConfig"
-                                        ]
-                                    }
-                                },
-                                "additionalProperties": false,
-                                "required": [
-                                    "name",
-                                    "baseUrl",
-                                    "iconUrl",
-                                    "searchConfig",
-                                    "episodeConfig",
-                                    "expansionConfig"
-                                ]
-                            }
+                          "type": {
+                            "type": "string",
+                            "description": "解析器类型，当前写HTML-Parser即可",
+                            "default": "HTML-Parser"
+                          },
+                          "selectorTag": {
+                            "type": "string",
+                            "description": "解析链接对应的css语句，一般是离播放器标签最近的script标签的位置，并且该标签会有类似var player_aaaa的字样",
+                            "default": "body > div.box-width.player.player-style-1 > div.player-left > script:nth-child(3)"
+                          },
+                          "matchVideoUrl": {
+                            "type": "string",
+                            "description": "当前版本番剧源的该字段为空即可",
+                            "default": ""
+                          },
+                          "parserMode": {
+                            "type": "string",
+                            "description": "解析类型，当前提供四种，direct，即直接解析，包括URL解码后直接就可使用的链接，base，即使用base64加密的链接可选用， yinghua，即使用樱花api解析的链接可选用，tuzimi，即使用天堂动漫api解析的链接可选用，如果这四种都不可用，再在前面填写用webview匹配的规则",
+                            "default": "direct"
+                          }
                         },
-                        "additionalProperties": false,
                         "required": [
-                            "featureID",
-                            "version",
-                            "config"
+                          "type",
+                          "selectorTag",
+                          "matchVideoUrl",
+                          "parserMode"
                         ]
-                    }
-                }
+                      },
+                      "subjectConfig": {
+                        "type": "object",
+                        "description": "条目匹配扩展选项",
+                        "properties": {
+                          "selectorCover": {
+                            "type": "string",
+                            "description": "条目封面链接所在标签的css语句",
+                            "default": "body > div.box-width > div > div.search-list > div > div > div.detail-pic > img"
+                          },
+                          "selectorSummary": {
+                            "type": "string",
+                            "description": "条目简介所在标签的css语句",
+                            "default": "body > div.vod-detail.style-detail > div.box-width.rel.wow > div.switch-box.top20 > div > div"
+                          },
+                          "selectorVerify": {
+                            "type": "string",
+                            "description": "如果当前源需要验证，比如需要填验证码或者需要过CloudFlare等的验证，则需要填对应验证元素所在标签的css语句",
+                            "default": "body > div.msg-jump.cor4.pop-box"
+                          },
+                          "coverClassTag": {
+                            "type": "string",
+                            "description": "条目封面链接所在标签中的匹配类别，以便于匹配到真正的封面链接而不是懒加载链接",
+                            "default": "data-src"
+                          }
+                        },
+                        "required": [
+                          "selectorCover",
+                          "selectorSummary",
+                          "selectorVerify",
+                          "coverClassTag"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "parserConfig",
+                      "subjectConfig"
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "baseUrl",
+                  "iconUrl",
+                  "searchConfig",
+                  "episodeConfig",
+                  "expansionConfig"
+                ]
+              }
             },
-            "additionalProperties": false,
             "required": [
-                "animeSources"
+              "featureID",
+              "version",
+              "config"
             ]
+          }
         }
-    },
-    "additionalProperties": false,
-    "required": [
-        "sourceList"
-    ]
+      },
+      "required": [
+        "animeSources"
+      ]
+    }
+  },
+  "required": [
+    "sourceList"
+  ]
 }
