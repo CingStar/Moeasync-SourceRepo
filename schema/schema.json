@@ -170,7 +170,6 @@
                         "required": [
                           "selectorCover",
                           "selectorSummary",
-                          "selectorVerify",
                           "coverClassTag"
                         ]
                       }
