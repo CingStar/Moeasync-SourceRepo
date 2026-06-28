@@ -10,8 +10,8 @@
                     "iconUrl": "https://enlienli.link/upload/mxprocms/20230707-1/49f4b8a7fd5cbf77ffcfa7a52e755675.gif",
                     "searchConfig": {
                         "searchUrl": "https://enlienli.link/vod/search.html?wd={keyword}",
-                        "selectorName": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
-                        "selectorLink": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > a"
+                        "selectorName": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
+                        "selectorLink": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > a"
                     },
                     "episodeConfig": {
                         "isMultiLine": true,
@@ -45,8 +45,8 @@
                     "iconUrl": "https://www.jibi.cc/upload/mxprocms/20240530-1/811f55cb787194c59e3f6d1d8724571c.jpg",
                     "searchConfig": {
                         "searchUrl": "https://www.jibi.cc/index.php/vod/search.html?wd={keyword}",
-                        "selectorName": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
-                        "selectorLink": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > a"
+                        "selectorName": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
+                        "selectorLink": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > a"
                     },
                     "episodeConfig": {
                         "isMultiLine": true,
@@ -89,15 +89,9 @@
                         "selectorLineLink": "body > div.fed-main-info.fed-min-width > div > div.fed-tabs-info > div > div.fed-tabs-item > div.fed-drop-boxs > div.fed-play-item",
                         "selectorEpisodeName": "ul:nth-child(2) > li > a",
                         "selectorEpisodeLink": "ul:nth-child(2) > li > a",
-                        "matchVideoUrl": ""
+                        "matchVideoUrl": "^(?!.*url=).*https.*m3u8$"
                     },
                     "expansionConfig": {
-                        "parserConfig": {
-                            "type": "HTML-Parser",
-                            "selectorTag": "",
-                            "matchVideoUrl": "url=https.*m3u8",
-                            "parserMode": "html"
-                        },
                         "subjectConfig": {
                             "selectorCover": "body > div.fed-main-info.fed-min-width > div > div > dl > dt > a",
                             "selectorSummary": "body > div.fed-main-info > div > div:nth-child(1) > div.fed-col-xs12 > dl > dd.fed-deta-content > ul > li.fed-col-xs12 > div",
@@ -124,15 +118,9 @@
                         "selectorLineLink": "body > div:nth-child(2) > div.fire.l > div:nth-child(4) > div > div > ul",
                         "selectorEpisodeName": "li > a",
                         "selectorEpisodeLink": "li > a",
-                        "matchVideoUrl": ""
+                        "matchVideoUrl": "^(?!.*url=).*https.*m3u8$"
                     },
                     "expansionConfig": {
-                        "parserConfig": {
-                            "type": "HTML-Parser",
-                            "selectorTag": "",
-                            "matchVideoUrl": "url=https.*m3u8",
-                            "parserMode": "html"
-                        },
                         "subjectConfig": {
                             "selectorCover": "body > div:nth-child(4) > div.fire.l > div.lpic > ul > li > a > img",
                             "selectorSummary": "body > div:nth-child(2) > div.fire.l > div.info",
