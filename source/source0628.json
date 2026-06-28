@@ -1,0 +1,146 @@
+{
+    "sourceList": {
+        "animeSources": [
+            {  
+                "featureID": "web-selector",
+                "version": "1.0",
+                "config": {
+                    "name": "omofun",
+                    "baseUrl": "https://enlienli.link/",
+                    "iconUrl": "https://enlienli.link/upload/mxprocms/20230707-1/49f4b8a7fd5cbf77ffcfa7a52e755675.gif",
+                    "searchConfig": {
+                        "searchUrl": "https://enlienli.link/vod/search.html?wd={keyword}",
+                        "selectorName": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
+                        "selectorLink": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > a"
+                    },
+                    "episodeConfig": {
+                        "isMultiLine": true,
+                        "selectorLineName": "#y-playList > div.module-tab-item > span",
+                        "selectorLineLink": "body > div.page.view > div.main > div > div:nth-child(2) > div.module-list > div",
+                        "selectorEpisodeName": "div > span > a",
+                        "selectorEpisodeLink": "div > a",
+                        "matchVideoUrl": ""
+                    },
+                    "expansionConfig": {
+                        "parserConfig": {
+                            "type": "HTML-Parser",
+                            "selectorTag": "body > div.page.player > div.main > div > div.module.module-player > div > div.player-box > div > script:nth-child(1)",
+                            "matchVideoUrl": "",
+                            "parserMode": "direct"
+                        },
+                        "subjectConfig": {
+                            "selectorCover": "body > div.page.list > div > div > div > div.module-main > div.module-items. > div > a > div > div.module-item-pic > img",
+                            "selectorSummary": "body > div.page.view > div.main > div > div.module > div > div.module-info-main > div.module-info-content > div.module-info-items > div.module-info-item > div > p",
+                            "coverClassTag": "data-original"
+                        }
+                    }
+                }
+            },
+            {
+                "featureID": "web-selector",
+                "version": "1.0",
+                "config": {
+                    "name": "叽哔动漫",
+                    "baseUrl": "https://www.jibi.cc/",
+                    "iconUrl": "https://www.jibi.cc/upload/mxprocms/20240530-1/811f55cb787194c59e3f6d1d8724571c.jpg",
+                    "searchConfig": {
+                        "searchUrl": "https://www.jibi.cc/index.php/vod/search.html?wd={keyword}",
+                        "selectorName": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > div.module-card-item-info > div > a > strong",
+                        "selectorLink": "body > div.page.list > div > div > div > div.module-main > div.module-items > div > a"
+                    },
+                    "episodeConfig": {
+                        "isMultiLine": true,
+                        "selectorLineName": "#y-playList > div.module-tab-item > span",
+                        "selectorLineLink": "body > div.page.view > div.main > div > div:nth-child(2) > div.module-list > div",
+                        "selectorEpisodeName": "div > span > a",
+                        "selectorEpisodeLink": "div > a",
+                        "matchVideoUrl": ""
+                    },
+                    "expansionConfig": {
+                        "parserConfig": {
+                            "type": "HTML-Parser",
+                            "selectorTag": "body > div.page.player > div.main > div > div.module.module-player > div > div.player-box > div > script:nth-child(1)",
+                            "matchVideoUrl": "",
+                            "parserMode": "direct"
+                        },
+                        "subjectConfig": {
+                            "selectorCover": "body > div.page.list > div > div > div > div.module-main > div.module-items. > div > a > div > div.module-item-pic > img",
+                            "selectorSummary": "body > div.page.view > div.main > div > div.module > div > div.module-info-main > div.module-info-content > div.module-info-items > div.module-info-item > div > p",
+                            "coverClassTag": "data-original"
+                        }
+                    }
+                }
+            },
+            {
+                "featureID": "web-selector",
+                "version": "1.0",
+                "config": {
+                    "name": "去看吧",
+                    "baseUrl": "https://11kt.net/",
+                    "iconUrl": "https://11kt.net/klogo.png",
+                    "searchConfig": {
+                        "searchUrl": "https://11kt.net/index.php/vod/search.html?wd={keyword}",
+                        "selectorName": "body > div.fed-main-info.fed-min-width > div > div > dl > dd.fed-deta-content > h1 > a",
+                        "selectorLink": "body > div.fed-main-info.fed-min-width > div > div > dl > dd.fed-deta-content > h1 > a"
+                    },
+                    "episodeConfig": {
+                        "isMultiLine": true,
+                        "selectorLineName": "body > div.fed-main-info.fed-min-width > div > div.fed-tabs-info > div > div.fed-tabs-item > div.fed-drop-boxs > ul > li > a",
+                        "selectorLineLink": "body > div.fed-main-info.fed-min-width > div > div.fed-tabs-info > div > div.fed-tabs-item > div.fed-drop-boxs > div.fed-play-item",
+                        "selectorEpisodeName": "ul:nth-child(2) > li > a",
+                        "selectorEpisodeLink": "ul:nth-child(2) > li > a",
+                        "matchVideoUrl": ""
+                    },
+                    "expansionConfig": {
+                        "parserConfig": {
+                            "type": "HTML-Parser",
+                            "selectorTag": "",
+                            "matchVideoUrl": "^(?!.*url=).*https.*m3u8$",
+                            "parserMode": "html"
+                        },
+                        "subjectConfig": {
+                            "selectorCover": "body > div.fed-main-info.fed-min-width > div > div > dl > dt > a",
+                            "selectorSummary": "body > div.fed-main-info > div > div:nth-child(1) > div.fed-col-xs12 > dl > dd.fed-deta-content > ul > li.fed-col-xs12 > div",
+                            "coverClassTag": "data-original"
+                        }
+                    }
+                }
+            },
+            {
+                "featureID": "web-selector",
+                "version": "1.0",
+                "config": {
+                    "name": "海星动漫",
+                    "baseUrl": "https://www.haixingdmx.com/",
+                    "iconUrl": "https://www.haixingdmx.com/hdst/hx_pic/favicon.ico",
+                    "searchConfig": {
+                        "searchUrl": "https://www.haixingdmx.com/s_all?ex=1&kw={keyword}",
+                        "selectorName": "body > div:nth-child(4) > div.fire.l > div.lpic > ul > li > h2 > a",
+                        "selectorLink": "body > div:nth-child(4) > div.fire.l > div.lpic > ul > li > h2 > a"
+                    },
+                    "episodeConfig": {
+                        "isMultiLine": true,
+                        "selectorLineName": "body > div:nth-child(2) > div.fire.l > div:nth-child(4) > ul > li",
+                        "selectorLineLink": "body > div:nth-child(2) > div.fire.l > div:nth-child(4) > div > div > ul",
+                        "selectorEpisodeName": "li > a",
+                        "selectorEpisodeLink": "li > a",
+                        "matchVideoUrl": ""
+                    },
+                    "expansionConfig": {
+                        "parserConfig": {
+                            "type": "HTML-Parser",
+                            "selectorTag": "^(?!.*url=).*https.*m3u8$",
+                            "matchVideoUrl": "",
+                            "parserMode": "html"
+                        },
+                        "subjectConfig": {
+                            "selectorCover": "body > div:nth-child(4) > div.fire.l > div.lpic > ul > li > a > img",
+                            "selectorSummary": "body > div:nth-child(2) > div.fire.l > div.info",
+                            "coverClassTag": "src"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
