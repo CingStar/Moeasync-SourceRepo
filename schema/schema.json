@@ -175,7 +175,6 @@
                       }
                     },
                     "required": [
-                      "parserConfig",
                       "subjectConfig"
                     ]
                   }
