@@ -95,7 +95,7 @@
                         "parserConfig": {
                             "type": "HTML-Parser",
                             "selectorTag": "",
-                            "matchVideoUrl": "^(?!.*url=).*https.*m3u8$",
+                            "matchVideoUrl": "url=https.*m3u8",
                             "parserMode": "html"
                         },
                         "subjectConfig": {
@@ -129,8 +129,8 @@
                     "expansionConfig": {
                         "parserConfig": {
                             "type": "HTML-Parser",
-                            "selectorTag": "^(?!.*url=).*https.*m3u8$",
-                            "matchVideoUrl": "",
+                            "selectorTag": "",
+                            "matchVideoUrl": "url=https.*m3u8",
                             "parserMode": "html"
                         },
                         "subjectConfig": {
