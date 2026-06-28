@@ -17,7 +17,7 @@
                         "isMultiLine": true,
                         "selectorLineName": "#y-playList > div.module-tab-item > span",
                         "selectorLineLink": "body > div.page.view > div.main > div > div:nth-child(2) > div.module-list > div",
-                        "selectorEpisodeName": "div > span > a",
+                        "selectorEpisodeName": "div > a > span",
                         "selectorEpisodeLink": "div > a",
                         "matchVideoUrl": ""
                     },
@@ -29,7 +29,7 @@
                             "parserMode": "direct"
                         },
                         "subjectConfig": {
-                            "selectorCover": "body > div.page.list > div > div > div > div.module-main > div.module-items. > div > a > div > div.module-item-pic > img",
+                            "selectorCover": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > a > div > div.module-item-pic > img",
                             "selectorSummary": "body > div.page.view > div.main > div > div.module > div > div.module-info-main > div.module-info-content > div.module-info-items > div.module-info-item > div > p",
                             "coverClassTag": "data-original"
                         }
@@ -50,9 +50,9 @@
                     },
                     "episodeConfig": {
                         "isMultiLine": true,
-                        "selectorLineName": "#y-playList > div.module-tab-item > span",
-                        "selectorLineLink": "body > div.page.view > div.main > div > div:nth-child(2) > div.module-list > div",
-                        "selectorEpisodeName": "div > span > a",
+                        "selectorLineName": "body > div.page.view > div.main > div > div:nth-child(5) > div > div > div > div >div.module-tab-item > span",
+                        "selectorLineLink": "body > div.page.view > div.main > div > div:nth-child(5) > div.module-list > div",
+                        "selectorEpisodeName": "div > a > span",
                         "selectorEpisodeLink": "div > a",
                         "matchVideoUrl": ""
                     },
@@ -64,7 +64,7 @@
                             "parserMode": "direct"
                         },
                         "subjectConfig": {
-                            "selectorCover": "body > div.page.list > div > div > div > div.module-main > div.module-items. > div > a > div > div.module-item-pic > img",
+                            "selectorCover": "body > div.page.list > div.main > div > div > div.module-main > div.module-items > div > a > div > div.module-item-pic > img",
                             "selectorSummary": "body > div.page.view > div.main > div > div.module > div > div.module-info-main > div.module-info-content > div.module-info-items > div.module-info-item > div > p",
                             "coverClassTag": "data-original"
                         }
