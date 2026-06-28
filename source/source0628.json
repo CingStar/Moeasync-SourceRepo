@@ -73,7 +73,7 @@
             },
             {
                 "featureID": "web-selector",
-                "version": "1.0",
+                "version": "1.1",
                 "config": {
                     "name": "去看吧",
                     "baseUrl": "https://11kt.net/",
@@ -108,7 +108,7 @@
             },
             {
                 "featureID": "web-selector",
-                "version": "1.0",
+                "version": "1.1",
                 "config": {
                     "name": "海星动漫",
                     "baseUrl": "https://www.haixingdmx.com/",
